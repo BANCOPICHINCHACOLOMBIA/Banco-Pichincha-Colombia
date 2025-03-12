@@ -30,3 +30,4 @@ def login_view(request):
         })
         return redirect('index')
     return render(request, 'login.html')
+
