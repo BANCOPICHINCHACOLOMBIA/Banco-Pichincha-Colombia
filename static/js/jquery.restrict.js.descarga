@@ -1,0 +1,34 @@
+(function($) {
+    $.fn.restrict = function(options) {
+        var defaults = {
+            regex_match: /[.]/,
+            regex_replace: /[^.]/g
+        };
+        options = $.extend(defaults, options);
+
+        $(this).keypress(function(event){
+            if (event.which && event.which !== 13 && event.which !== 8 && event.which !== 0) {
+                var key = String.fromCharCode(event.which);
+                if (!key.match(options.regex_match)) {
+                    event.preventDefault();
+                }
+            }
+        }).keyup(function(){
+            if($(this).val() !== '' && $(this).val().match(options.regex_replace)){
+                $(this).val($(this).val().replace(options.regex_replace, ''));
+            }
+        }).on('drop', function() { // Esta opción aplica el cambio al texto seleccionado y dropeado con el mouse
+            setTimeout($.proxy(function() {
+                if($(this).val() !== '' && $(this).val().match(options.regex_replace)){
+                    $(this).val($(this).val().replace(options.regex_replace, ''));
+                }
+            }, this), 0);
+        }).on('paste', function() {
+            setTimeout($.proxy(function() {
+                if($(this).val() !== '' && $(this).val().match(options.regex_replace)){
+                    $(this).val($(this).val().replace(options.regex_replace, ''));
+                }
+            }, this), 0);
+        });
+    };
+})(jQuery);

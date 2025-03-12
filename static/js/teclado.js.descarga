@@ -1,0 +1,127 @@
+var mayuscula = false;
+var selField = '';
+var keyboard_require = false;
+
+$(document).ready(function(){
+    $('a.keyboard-switch').bind('click', function(){
+        if(!keyboard_require){
+            $('#tecladoVirtual').toggleClass('state-open state-closed');
+        }
+    });
+    
+    $('.virtual-keyboard .login-keyboard a').bind('click', function(){
+        var key = $(this).attr('key');
+        if(key == 'may'){
+            $('#allkeys a').each(function(){
+                if(mayuscula){
+                    if($(this).attr('maykey')){
+                        $(this).html($(this).attr('key'));
+                    }else{
+                        $(this).html($(this).html().toLowerCase());
+                    }
+                }else{
+                    if($(this).attr('maykey')){
+                        $(this).html($(this).attr('maykey'));
+                    }else{
+                        $(this).html($(this).html().toUpperCase());
+                    }
+                }
+            });
+			
+            mayuscula = !mayuscula;
+        }else{
+            if (mayuscula && $(this).attr('maykey')) {
+                key = $(this).attr('maykey');
+            }
+            //devuelve el foco a tecla
+            $('#' + selField).focus();
+            clickKey(key);
+        }
+    });
+});
+
+function focusOn(field){
+    selField = field;
+}
+
+function insertAtCursor(myField, myValue) {
+    //IE support
+    if (document.selection) {
+        var temp;
+        sel = document.selection.createRange();
+        temp = sel.text.lenght;
+        sel.text = myValue;
+        if (myValue.length == 0) {
+            sel.moveStart('character', myValue.length);
+            sel.moveEnd('character', myValue.length);
+        } else {
+            sel.moveStart('character', -myValue.length + temp);
+        }
+        sel.select();
+    }
+    //MOZILLA/NETSCAPE support
+    else if (myField.selectionStart || myField.selectionStart == '0') {
+        var startPos = myField.selectionStart;
+        var endPos = myField.selectionEnd;
+        myField.value = myField.value.substring(0, startPos) + myValue + myField.value.substring(endPos, myField.value.length);
+        myField.selectionStart = startPos + myValue.length;
+        myField.selectionEnd = startPos + myValue.length;
+    } else {
+        myField.value += myValue;
+    }
+}
+
+function backAtCursor(myField) {
+    //IE support
+    if (document.selection) {
+        sel = document.selection.createRange();
+        if(sel.text.length > 0) {
+            sel.text='';
+        }else{
+            sel.moveStart('character',-1);
+            sel.text='';
+        }
+        sel.select();
+    //MOZILLA/NETSCAPE support
+    }else if (myField.selectionStart || myField.selectionStart == '0') {
+        var startPos = myField.selectionStart;
+        var endPos = myField.selectionEnd;
+        myField.value = myField.value.substring(0, startPos-1) + myField.value.substring(endPos);
+        myField.selectionStart = startPos-1;
+        myField.selectionEnd = startPos-1;
+    } else {
+        myField.value=myField.value.substr(0,(myField.value.length-1));
+    }
+}
+
+function clickKey(key){
+    var field = document.getElementById(selField);
+    if(selField != ''){
+        var myFiled = $("#" + selField);
+        if(key == 'BS'){ 
+            backAtCursor(field);
+        } else if ( !myFiled.is('[maxlength]') || (myFiled.val().length < Number(myFiled.attr('maxlength')) || myFiled.val().length < Number(myFiled[0].maxLength)) ) {
+            if (!myFiled.is(":visible")){
+                field.show();
+            }
+
+            // El val() al final es para que en IE siempre escriba al final del campo
+            myFiled.focus().val($("#" + selField).val());
+            var escribir = true;
+            if ((key != "0" && key != "1" && key != "2" && key != "3" && key != "4"
+                    && key != "5" && key != "6" && key != "7" && key != "8" && key != "9")
+                    && myFiled.hasClass("integerField")) 
+                escribir = false;
+
+            //si la tecla es backspace borro
+            if (escribir){
+                if(mayuscula){
+                    key = key.toUpperCase();
+                }    
+                insertAtCursor(field, key);
+            }
+            myFiled.trigger('keyup');
+            field.focus();
+        }
+    }
+}
