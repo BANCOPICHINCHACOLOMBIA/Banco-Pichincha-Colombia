@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 
 # Inicializar Firebase
-cred = credentials.Certificate('fire/data.json')
+cred = credentials.Certificate('/etc/secrets/data.json')
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://pruebabpcolombia-default-rtdb.firebaseio.com/'
 })
