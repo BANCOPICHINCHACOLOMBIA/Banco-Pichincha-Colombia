@@ -1,0 +1,266 @@
+* {
+  color: black !important;
+  background: none !important;
+  border-color: #c0c0c0 !important; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-size: x-small; }
+
+.print-only {
+  display: block; }
+
+.no-print,
+.logout,
+.mail-alert,
+aside,
+.breadcrumbs,
+.page-toolbar,
+button,
+.button-row,
+.keyboard-switch,
+.desktop-bar {
+  display: none !important; }
+
+html,
+body {
+  height: normal;
+  min-height: normal; }
+  html p,
+  html a,
+  body p, body a {
+    font-size: x-small; }
+  html h1,
+  body h1 {
+    font-size: big; }
+  html h2,
+  body h2 {
+    font-size: medium; }
+  html h3,
+  body h3 {
+    font-size: small; }
+
+.outer-container {
+  margin-bottom: 0;
+  min-height: 0;
+  padding-bottom: 0; }
+
+.inner-container {
+  padding: 0;
+  display: block; }
+
+header.main-header {
+  border-bottom: 1px dotted black;
+  padding-bottom: 15px;
+  position: static;
+  height: auto; }
+  header.main-header .persistent {
+    height: auto; }
+  header.main-header .app-name {
+    position: static;
+    /* display: inline-block; */
+    float: left;
+    }
+    header.main-header .app-name a {
+      display: none; }
+  header.main-header .header-modules {
+    display: none; }
+  header.main-header .session-information .last-session-information, header.main-header .session-information a,
+  header.main-header .session-information .current-session-information span {
+    font-size: x-small; }
+
+.message {
+  padding: 10px 10px 10px 50px; }
+
+.main-content-wrapper {
+  display: block; }
+  .main-content-wrapper .main-content-header {
+    padding: 15px 0 0 0 !important; }
+    .main-content-wrapper .main-content-header a {
+      display: none; }
+    .main-content-wrapper .main-content-header .main-content-title {
+      margin: 0;
+      height: auto;
+      font-size: medium; }
+    .main-content-wrapper .main-content-header .main-content-header-button-row {
+      display: none; }
+  .main-content-wrapper .main-content {
+    padding: 10px 0 !important;
+    }
+  .main-content-wrapper .table-title-header {
+    border-top: none;
+    padding-top: 0; }
+    .main-content-wrapper .table-title-header h3 {
+      float: left;
+      margin-right: 20px;
+      line-height: 20px; }
+    .main-content-wrapper .table-title-header a {
+      display: none; }
+  /*.main-content-wrapper .table-filter {
+    float: left;
+    clear: none; }*/
+    .main-content-wrapper .table-filter .field-wrapper {
+      margin-right: 10px; }
+    .main-content-wrapper .table-filter .field-date,
+    .main-content-wrapper .table-filter .filter-date,
+    .main-content-wrapper .table-filter input {
+      width: 200px; }
+  .main-content-wrapper div[title="Banner"] {
+    display: none; }
+  .main-content-wrapper .regular-table tr td,
+  .main-content-wrapper .regular-table tr th {
+    padding: 5px;
+    font-size: x-small; }
+  .main-content-wrapper .regular-table-wrapper {
+    height: auto !important; }
+  .main-content-wrapper .pseudo-table .account-name,
+  .main-content-wrapper .pseudo-table .box-title.account-name {
+    font-size: small; }
+  .main-content-wrapper .pseudo-table .highlighted-cell,
+  .main-content-wrapper .pseudo-table .pseudo-col.highlighted-cell,
+  .main-content-wrapper .pseudo-table .pseudo-col {
+    padding: 10px 10px 0 10px;
+    vertical-align: top; }
+    .main-content-wrapper .pseudo-table .highlighted-cell .main-information .box-content-figure,
+    .main-content-wrapper .pseudo-table .pseudo-col.highlighted-cell .main-information .box-content-figure,
+    .main-content-wrapper .pseudo-table .pseudo-col .main-information .box-content-figure {
+      margin-bottom: 10px; }
+      .main-content-wrapper .pseudo-table .highlighted-cell .main-information .box-content-figure:last-child,
+      .main-content-wrapper .pseudo-table .pseudo-col.highlighted-cell .main-information .box-content-figure:last-child,
+      .main-content-wrapper .pseudo-table .pseudo-col .main-information .box-content-figure:last-child {
+        margin-bottom: 0; }
+    .main-content-wrapper .pseudo-table .highlighted-cell .pseudo-dl,
+    .main-content-wrapper .pseudo-table .pseudo-col.highlighted-cell .pseudo-dl,
+    .main-content-wrapper .pseudo-table .pseudo-col .pseudo-dl {
+      padding: 0; }
+  .main-content-wrapper .metadata-boxes .bigger-text {
+    font-size: small; }
+  .main-content-wrapper .metadata-boxes .box-title,
+  .main-content-wrapper .metadata-boxes p {
+    padding: 0;
+    margin-bottom: 10px; }
+    .main-content-wrapper .metadata-boxes .box-title:last-child,
+    .main-content-wrapper .metadata-boxes p:last-child {
+      margin-bottom: 0; }
+  .main-content-wrapper .metadata-boxes .box-title {
+    font-size: small; }
+  .main-content-wrapper .metadata-boxes .box-content-figure span {
+    font-size: medium; }
+  .main-content-wrapper .metadata-boxes hr {
+    margin: 10px 0; }
+  .main-content-wrapper .pagination .current {
+    background-color: black !important;
+    color: white !important;
+    border-color: black !important; }
+  .main-content-wrapper .field-textbox {
+    height: auto; }
+
+  /*.main-content-wrapper .selectize-input {
+    border: none;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: auto !important;
+    font-size: x-small;
+  }
+    .main-content-wrapper .selectize-input input {
+      height: auto; }
+    .main-content-wrapper .selectize-input .item {
+      line-height: 20px;
+      height: auto; }
+    .main-content-wrapper .selectize-input:after {
+      display: none !important; }*/
+
+  .main-content-wrapper .selectize-dropdown {
+    display: none !important; }
+  .main-content-wrapper .ticket h4 {
+    padding: 10px;
+    clear: both;
+    font-size: small;
+    margin-top: -11px }
+  .main-content-wrapper .ticket hr {
+    margin: 0 10px 10px 10px; }
+  .main-content-wrapper .ticket .simple-box {
+    padding: 10px 0 0 0;
+    margin-bottom: -1px; }
+  .main-content-wrapper .ticket .simple-box-header {
+    padding: 0 10px;
+    margin-bottom: 10px; }
+    .main-content-wrapper .ticket .simple-box-header h3 {
+      margin-bottom: 10px; }
+  .main-content-wrapper .ticket .field-hint {
+    padding-top: 10px; }
+  .main-content-wrapper .ticket .pseudo-table {
+    margin-bottom: 5px; }
+    .main-content-wrapper .ticket .pseudo-table .pseudo-col {
+      border: none;
+      display: block;
+      float: left;
+      width: auto; }
+      .main-content-wrapper .ticket .pseudo-table .pseudo-col .pseudo-dl,
+      .main-content-wrapper .ticket .pseudo-table .pseudo-col .pseudo-dd,
+      .main-content-wrapper .ticket .pseudo-table .pseudo-col .pseudo-dt {
+        float: left;
+        display: block;
+        width: auto;
+        margin-right: 10px;
+        font-size: small; }
+        .main-content-wrapper .ticket .pseudo-table .pseudo-col .pseudo-dl strong,
+        .main-content-wrapper .ticket .pseudo-table .pseudo-col .pseudo-dd strong,
+        .main-content-wrapper .ticket .pseudo-table .pseudo-col .pseudo-dt strong {
+          font-size: small; }
+  .main-content-wrapper .ticket .line-wrapper {
+    border-bottom: none !important;
+    margin: 0 10px 10px 10px;
+    padding-bottom: 0; }
+  .main-content-wrapper .ticket .field-textbox.prefilled p {
+    font-size: x-small; }
+  .main-content-wrapper .field-accordion .content-box {
+    padding: 0; }
+  .main-content-wrapper .ui-accordion-header-icon {
+    display: none; }
+  .main-content-wrapper .ui-accordion-content {
+    display: block !important; }
+  .main-content-wrapper .accordion-title {
+    padding: 10px;
+    font-size: small; }
+    .main-content-wrapper .accordion-title span {
+      font-size: small; }
+    .main-content-wrapper .accordion-title a {
+      display: none; }
+  .main-content-wrapper .simple-box.scrollable {
+    height: auto !important; }
+
+footer.main-footer {
+  position: static;
+  border-top: 1px dotted black !important;
+  }
+  footer.main-footer a {
+    display: none; }
+
+.mCSB_container {
+  position: static !important; }
+
+.mCustomScrollBox {
+  overflow: visible !important; }
+
+  body .main-content-wrapper .main-content .regular-form .field-wrapper.field-with-buttons {
+    float: left;
+    margin-left: 0;
+  }
+
+  .tooltipster-default {
+
+      display: none !important;
+  }
+/*# sourceMappingURL=print.css.map */
